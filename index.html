@@ -4,63 +4,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prashobh Paul - Digital Card</title>
   <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --card-color: #ffffff;
+      --text-color: #333;
+      --link-color: #007bff;
+      --button-bg: #0073b1;
+      --button-resume: #007BFF;
+      --button-meeting: #00a2ff;
+      --button-github: #333;
+    }
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --card-color: #1e1e1e;
+      --text-color: #f4f4f4;
+      --link-color: #66b2ff;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
+      background: linear-gradient(135deg, #c3ecff, #e0c3fc);
       margin: 0;
       padding: 20px;
+      transition: background 0.5s ease;
+    }
+    body[data-theme="dark"] {
+      background: linear-gradient(135deg, #2b2b2b, #1c1c1c);
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #ccc;
+      padding: 6px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1001;
     }
     .card {
-      background: white;
+      background: var(--card-color);
       max-width: 500px;
       margin: auto;
       padding: 30px;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
+      transition: background 0.5s ease;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid #00a2ff;
+      box-shadow: 0 0 15px rgba(0, 162, 255, 0.5);
     }
     h1 {
       font-size: 24px;
-      margin-bottom: 10px;
+      color: var(--text-color);
     }
     h2 {
       font-size: 18px;
-      color: #333;
+      color: var(--text-color);
       margin-bottom: 20px;
     }
-    p {
+    #typewriter {
+      color: var(--link-color);
       font-size: 16px;
-      color: #555;
-      line-height: 1.6;
+      min-height: 24px;
+      margin-bottom: 20px;
     }
     .buttons a {
       display: block;
       margin: 10px auto;
       text-decoration: none;
       color: white;
-      background: #0073b1;
+      background: var(--button-bg);
       padding: 10px 20px;
       border-radius: 6px;
       width: 80%;
       max-width: 250px;
       transition: background 0.3s;
     }
-    .buttons a.github {
-      background: #333;
-    }
-    .buttons a.resume {
-      background: #007BFF;
-    }
-    .buttons a.calendly {
-      background: #00a2ff;
-    }
-    .buttons a:hover {
-      opacity: 0.9;
-    }
+    .buttons a.resume { background: var(--button-resume); }
+    .buttons a.calendly { background: var(--button-meeting); }
+    .buttons a.github { background: var(--button-github); }
+    .buttons a:hover { opacity: 0.9; }
     .contact {
       margin-top: 20px;
       font-size: 14px;
-      color: #333;
+      color: var(--text-color);
     }
     .whatsapp {
       position: fixed;
@@ -68,17 +101,41 @@
       right: 20px;
       z-index: 1000;
     }
+    .ai-tip {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: #007bff;
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .ai-tooltip {
+      display: none;
+      position: fixed;
+      bottom: 130px;
+      right: 20px;
+      background: var(--card-color);
+      color: var(--text-color);
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 200px;
+    }
   </style>
 </head>
 <body>
-  <div class="card">
+  <div class="theme-toggle" onclick="toggleTheme()">Toggle Theme</div>  <div class="card">
+    <img src="photo.jpg" alt="Profile Photo" class="profile-img">
     <h1>Prashobh Paul</h1>
     <h2>Associate Technical Architect - Data Science</h2>
-    <p>
-      M.Tech in Knowledge Engineering (AI specialization, 2012–14).<br />
-      10+ years of experience in data science, currently at TechMahindra, Hyderabad.<br />
-      Formerly with TCS, Yash Technologies, Brane Enterprises, and Primera Medical Technologies.
-    </p><div class="buttons">
+    <div id="typewriter"></div><div class="buttons">
   <a class="resume" href="PRASHOBH_23May2025.pdf" target="_blank">View Resume</a>
   <a class="calendly" href="https://calendly.com/prashobhpaulnambadan" target="_blank">Book a Meeting</a>
   <a class="linkedin" href="https://www.linkedin.com/in/prashobh-paul-00715578/" target="_blank">LinkedIn Profile</a>
@@ -90,8 +147,28 @@
   <p>Phone: +91 7036363355</p>
 </div>
 
-  </div>  <a class="whatsapp" href="https://wa.me/917036363355?text=Hi%20Prashobh!%20I%20visited%20your%20digital%20card%20and%20would%20like%20to%20connect." target="_blank">
+  </div>  <div class="ai-tip" onclick="toggleTip()">?</div>
+  <div class="ai-tooltip" id="aiTooltip">Want to automate your workflow? Let's connect.</div>  <a class="whatsapp" href="https://wa.me/917036363355?text=Hi%20Prashobh!%20I%20visited%20your%20digital%20card%20and%20would%20like%20to%20connect." target="_blank">
     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Chat on WhatsApp" />
-  </a>
-</body>
+  </a>  <script>
+    const text = "Designing intelligent conversations. Architecting the future of AI.";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      }
+    }
+    typeWriter();
+
+    function toggleTheme() {
+      const current = document.body.getAttribute("data-theme");
+      document.body.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    }
+    function toggleTip() {
+      const tooltip = document.getElementById("aiTooltip");
+      tooltip.style.display = tooltip.style.display === "block" ? "none" : "block";
+    }
+  </script></body>
 </html>
