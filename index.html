@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prashobh Paul - Digital Card</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --bg-color: #f4f4f4;
@@ -79,23 +78,15 @@
       flex-wrap: wrap;
       margin-top: 20px;
     }
-    .icon-row a {
-      text-decoration: none;
-      color: white;
-      background: #007bff;
-      padding: 12px;
+    .icon-row a img {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      font-size: 18px;
-      transition: background 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .icon-row a:hover {
-      background: #0056b3;
-    }
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
+    .icon-row a:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
     .ai-tip {
       position: fixed;
@@ -136,12 +127,24 @@
     <div id="typewriter"></div>
 
     <div class="icon-row">
-      <a href="PRASHOBH_23May2025.pdf" target="_blank" title="View Resume"><i class="fas fa-user"></i></a>
-      <a href="https://calendly.com/prashobhpaulnambadan" target="_blank" title="Book a Meeting"><i class="fas fa-calendar-alt"></i></a>
-      <a href="https://www.linkedin.com/in/prashobh-paul-00715578/" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/PrashobhPaul" target="_blank" title="GitHub Profile"><i class="fab fa-github"></i></a>
-      <a href="mailto:prashobhpaulnambadan@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://wa.me/917036363355?text=Hi%20Prashobh!%20I%20visited%20your%20digital%20card%20and%20would%20like%20to%20connect." target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="PRASHOBH_23May2025.pdf" target="_blank" title="Access Professional Resume">
+        <img src="https://img.icons8.com/fluency/48/resume.png" alt="Resume">
+      </a>
+      <a href="https://calendly.com/prashobhpaulnambadan" target="_blank" title="Schedule a Meeting">
+        <img src="https://img.icons8.com/fluency/48/calendar.png" alt="Calendar">
+      </a>
+      <a href="https://www.linkedin.com/in/prashobh-paul-00715578/" target="_blank" title="Visit LinkedIn Profile">
+        <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/PrashobhPaul" target="_blank" title="Explore GitHub Projects">
+        <img src="https://img.icons8.com/ios-glyphs/48/000000/github.png" alt="GitHub">
+      </a>
+      <a href="mailto:prashobhpaulnambadan@gmail.com" title="Send an Email">
+        <img src="https://img.icons8.com/color/48/gmail-new.png" alt="Gmail">
+      </a>
+      <a href="https://wa.me/917036363355?text=Hi%20Prashobh%2C%20I%20came%20across%20your%20profile%20and%20learned%20about%20your%20work%20in%20AI.%20I'd%20be%20happy%20to%20connect%20and%20discuss%20a%20potential%20opportunity%20regarding%20%3Cbrief%20topic%3E." target="_blank" title="Connect via WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+      </a>
     </div>
   </div>
 
