@@ -1,34 +1,25 @@
-
 import streamlit as st
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
+from transformers import pipeline
 
-st.set_page_config(page_title="Prashobh's AI Assistant")
+st.set_page_config(page_title="Prashobh's AI Assistant", layout="centered")
 
-@st.cache_resource
-def load_model():
-    tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
-    model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
-    return tokenizer, model
+st.title("Ask Me Anything")
+st.markdown("This assistant can answer questions about my professional background and AI work.")
 
-tokenizer, model = load_model()
+# Load a lightweight model
+qa = pipeline("text-generation", model="tiiuae/falcon-rw-1b")
 
-st.title("Ask Me Anything About Prashobh Paul")
+# Define static context about Prashobh
+context = """
+Prashobh Paul is an AI professional with 10+ years of experience, specialized in conversational systems and agentic frameworks.
+He has worked with companies including TechMahindra, Cisco, and CIA on NLP, GenAI, and multi-agent AI solutions.
+Some of his notable projects include calendar planning assistants and customer intelligence alert systems.
+"""
 
-if "chat_history_ids" not in st.session_state:
-    st.session_state.chat_history_ids = None
-if "past_inputs" not in st.session_state:
-    st.session_state.past_inputs = []
+# Input box
+query = st.text_input("What would you like to know?")
 
-user_input = st.text_input("Your question", "")
-
-if user_input:
-    new_input_ids = tokenizer.encode(user_input + tokenizer.eos_token, return_tensors='pt')
-    bot_input_ids = torch.cat([st.session_state.chat_history_ids, new_input_ids], dim=-1) if st.session_state.chat_history_ids is not None else new_input_ids
-    st.session_state.chat_history_ids = model.generate(bot_input_ids, max_length=1000, pad_token_id=tokenizer.eos_token_id)
-    response = tokenizer.decode(st.session_state.chat_history_ids[:, bot_input_ids.shape[-1]:][0], skip_special_tokens=True)
-    st.session_state.past_inputs.append((user_input, response))
-
-for q, a in reversed(st.session_state.past_inputs):
-    st.markdown(f"**You:** {q}")
-    st.markdown(f"**Prashobh's Assistant:** {a}")
+if query:
+    prompt = f"Context: {context}\nQuestion: {query}\nAnswer:"
+    response = qa(prompt, max_new_tokens=60, do_sample=True, temperature=0.7)
+    st.write(response[0]['generated_text'].split("Answer:")[-1])
