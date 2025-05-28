@@ -1,27 +1,28 @@
-
 import streamlit as st
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-# Load GPT-2 model and tokenizer
+st.set_page_config(page_title="Prashobh's AI Assistant", layout="centered")
+
+st.title("🤖 Welcome to Prashobh's AI Assistant")
+st.markdown("Ask me anything about my work, expertise, or experience!")
+
+# Load model and tokenizer
 @st.cache_resource
 def load_model():
-    tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
-    model = GPT2LMHeadModel.from_pretrained("gpt2")
-    model.eval()
+    model_name = "distilgpt2"
+    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
+    model = AutoModelForCausalLM.from_pretrained(model_name)
     return tokenizer, model
 
 tokenizer, model = load_model()
 
-st.title("Prashobh's AI Assistant 🤖")
-st.write("Ask me anything about Prashobh Paul and his work in AI!")
+# User input
+user_input = st.text_input("Your question:", "")
 
-user_input = st.text_input("You:", "")
-
+# Generate response
 if user_input:
-    inputs = tokenizer.encode(user_input + tokenizer.eos_token, return_tensors="pt")
-    outputs = model.generate(inputs, max_length=150, do_sample=True, top_k=50, top_p=0.95)
+    inputs = tokenizer.encode(user_input, return_tensors="pt")
+    outputs = model.generate(inputs, max_length=100, num_return_sequences=1, pad_token_id=tokenizer.eos_token_id)
     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-    st.markdown("**AI Assistant:**")
-    st.write(response[len(user_input):].strip())
+    st.markdown(f"**AI Assistant:** {response}")
