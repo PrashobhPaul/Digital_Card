@@ -1291,9 +1291,184 @@ const KB = [
      THANKS / FAREWELL
   ════════════════════════════════ */
   {
-    p: /\b(thank|thanks|thank you|appreciate|helpful|bye|goodbye|see you|take care|that'?s all|done for now)\b/i,
-    q: ['thank you', 'thanks', 'appreciate it', 'bye', 'goodbye', 'take care', 'that is all'],
-    a: () => `Happy to help! Feel free to reach out anytime.\n\n📧 Email: prashobhpaulnambadan@gmail.com\n📅 Schedule a call: https://calendly.com/prashobhpaulnambadan`
+    p: /\b(that'?s all|done for now|all done|no more questions|nothing else|that('?s| is) (it|enough|helpful|all i needed))\b/i,
+    q: ["that's all","done for now","all done","no more questions","nothing else","that is it","that is helpful"],
+    a: () => `Glad I could help! 😊\n\nFeel free to come back anytime.\n\n📧 prashobhpaulnambadan@gmail.com`
+  },
+
+
+  /* ════════════════════════════════
+     BOT CAPABILITY & CONFIDENCE
+  ════════════════════════════════ */
+  {
+    p: /will you (be able to )?answer all (my )?questions|can you answer everything|how much (can|do) you know|what (can't|cant|can) you (answer|handle)/i,
+    q: ['will you be able to answer all my questions','can you answer everything','how much do you know','what can you handle','what can you not answer','answer all questions'],
+    a: () => `I'll do my best — and I'm quite well-equipped for anything related to Prashobh's work, skills, and services.\n\nFor topics outside that scope, I'll be upfront rather than guess.\n\nGo ahead — ask away. 🙂`
+  },
+  {
+    p: /is this (an? )?(ai|artificial intelligence|chatbot|chat bot|bot|automated|llm.based)|are you (an? )?(ai.based|chatbot|automated bot|llm)/i,
+    q: ['is this an ai based chat bot','is this a chatbot','is this ai','are you ai based','is this automated','is this an llm','ai chatbot'],
+    a: () => `Yes — I'm an AI-powered assistant built specifically for Prashobh's digital presence.\n\nI combine a structured knowledge base with an intent engine to give you accurate, relevant answers.\n\nThink of me as a smart first point of contact. 🙂`
+  },
+
+  /* ════════════════════════════════
+     WELLNESS / HOW IS HE
+  ════════════════════════════════ */
+  {
+    p: /how is prashobh (doing|going|getting on|keeping)|is prashobh (keeping well|doing well|fine|okay|alright|good)|how('?s| is) he (doing|keeping|going)/i,
+    q: ['how is prashobh doing','is prashobh keeping well','how is he doing','is prashobh fine','how is he keeping','prashobh doing well'],
+    a: () => `From what I know, he's doing well — actively working on exciting AI projects and always open to meaningful collaborations.\n\nIf you'd like to connect with him directly:\n\n📅 Schedule a call: https://calendly.com/prashobhpaulnambadan\n📧 Email: prashobhpaulnambadan@gmail.com`
+  },
+
+  /* ════════════════════════════════
+     INTELLIGENCE / CAPABILITY PROBE
+  ════════════════════════════════ */
+  {
+    p: /is prashobh (intelligent|smart|capable|good) enough|is he (intelligent|smart|bright|sharp|capable) enough|how intelligent is (he|prashobh)/i,
+    q: ['is prashobh intelligent enough','is he smart enough','is he capable enough','how intelligent is he','is prashobh sharp','is prashobh bright enough'],
+    a: () => `"Intelligent enough" depends on what you're trying to solve — and in the AI space, that bar is high.\n\nPrashobh has 13+ years of hands-on experience across GenAI, NLP, agentic systems, and enterprise AI — not just theory, but shipped solutions.\n\nThe best answer? Engage with him directly and see.${'\n\n📅 Schedule a call: https://calendly.com/prashobhpaulnambadan'}`
+  },
+
+  /* ════════════════════════════════
+     SESSION / TALK REQUEST
+  ════════════════════════════════ */
+  {
+    p: /will he do (a |an? )?(1|one)\s*h(r|our) session|can he (do|give|conduct) (a |an? )?(talk|session|lecture|presentation|webinar)|1 hour (talk|session|session)|session (on|about) ai|talk on ai/i,
+    q: ['will he do 1hr session for us','can he do a talk on ai','1 hour session','one hour talk','ai talk session','conduct a session','give a lecture on ai','ai webinar','workshop session'],
+    a: () => `Yes — he does conduct sessions, talks, and workshops on AI topics.\n\nTypical formats include:\n• 1-hour introductory AI talks for teams\n• Half-day / full-day workshops on GenAI or Agentic AI\n• Corporate training programs (custom duration)\n\nShare your requirement and he'll tailor it to your audience:\n\n📧 Email: prashobhpaulnambadan@gmail.com\n📅 Schedule a call: https://calendly.com/prashobhpaulnambadan`
+  },
+
+  /* ════════════════════════════════
+     AGENTIC SYSTEMS KNOWLEDGE
+  ════════════════════════════════ */
+  {
+    p: /do you (have any idea|know) about agentic (systems?|ai|frameworks?|work)|what (do you know|can you tell me) about agentic|explain agentic (ai|systems?)/i,
+    q: ['do you have any idea about agentic systems','what do you know about agentic ai','explain agentic systems','tell me about agentic ai','agentic systems work','how do agentic systems work'],
+    a: () => `Agentic AI is actually Prashobh's primary area of work right now.\n\nAgentic systems are AI architectures where multiple autonomous agents collaborate — each with a defined role — to reason, plan, and execute complex tasks without constant human input.\n\nPrashobh builds these using LangGraph, CrewAI, and AutoGen for enterprise clients.\n\nInterested in a deeper conversation or a session on this?\n\n📅 Schedule a call: https://calendly.com/prashobhpaulnambadan`
+  },
+
+  /* ════════════════════════════════
+     OUT OF SCOPE — WORLD EVENTS / WAR
+  ════════════════════════════════ */
+  {
+    p: /predict (about )?(the )?(war|conflict|crisis|geopolit|election result|stock market|future event)|will (war|the war|there be war)|what (will happen|is going to happen) (with|in) (the war|ukraine|russia|israel|gaza|world)/i,
+    q: ['can you predict about the war situation','predict war using ai','ai war prediction','geopolitical prediction','will there be war','future world events','predict global crisis'],
+    a: () => `That's outside what I'm designed to handle — geopolitical predictions are beyond my scope.\n\nWhat I can say is that AI is increasingly used in conflict analysis, humanitarian logistics, and risk modeling — and Prashobh has worked on enterprise-grade AI solutions in regulated domains.\n\nIf that kind of applied AI work interests you, let's talk:\n\n📧 Email: prashobhpaulnambadan@gmail.com`
+  },
+
+  /* ════════════════════════════════
+     AI TOOL COMPARISONS
+  ════════════════════════════════ */
+  {
+    p: /is n8n better than|n8n vs (claude|langchain|zapier|make|autogen)|compare n8n|n8n (opinion|thoughts|review)/i,
+    q: ['is n8n better than claude','n8n vs claude','n8n comparison','n8n or langchain','n8n opinion','is n8n good'],
+    a: () => `Great question — though I'll share context rather than a verdict.\n\nn8n is a workflow automation tool great for connecting apps and APIs visually. Claude (and LLMs broadly) are reasoning engines for language and cognition.\n\nThey're not really competitors — n8n can actually orchestrate AI agents including Claude.\n\nFor Prashobh's agentic work, the choice of tooling always depends on the problem. That's a nuanced conversation worth having directly:\n\n📅 Schedule a call: https://calendly.com/prashobhpaulnambadan`
+  },
+  {
+    p: /which is the best (llm|ai model|language model)|best (llm|ai model|gpt|claude|gemini|llama)|gpt vs claude|claude vs gemini|what (llm|ai model) (should i use|is better|do you recommend)/i,
+    q: ['which is the best llm','best llm in your opinion','which ai model is best','gpt vs claude','claude vs gemini','what llm should i use','best language model','which model is better'],
+    a: () => `Honest answer — there's no single "best" LLM. It depends on your use case.\n\n• GPT-4o — strong general reasoning and tool use\n• Claude — excellent for long context, nuanced writing, and safe outputs\n• Gemini — well-integrated with Google ecosystem\n• Llama / Mistral — best for open-source, self-hosted needs\n\nPrashobh works across multiple models and picks the right one for the job — not the most hyped one.\n\nWant to discuss what fits your use case?\n\n📅 Schedule a call: https://calendly.com/prashobhpaulnambadan`
+  },
+
+  /* ════════════════════════════════
+     TRICKY / CREATIVE GREETINGS
+  ════════════════════════════════ */
+  {
+    p: /^(yo+|yooo+|heyyy+|hiii+|heyy+|holla|hola|aloha|bonjour|ciao|salut|ahoy|ayy|sup+|wassup|wazzup|whats good|what up)[!?.\s]*$/i,
+    q: ['yo','yoo','heyyy','hiii','holla','hola','aloha','bonjour','ciao','ahoy','ayy','sup','wassup','whats good'],
+    a: () => `Hey! 👋 Glad you stopped by.\n\nI'm Prashobh's AI assistant — here to help you explore his work, services, or find the right way to connect.\n\nWhat's on your mind?`
+  },
+  {
+    p: /^(knock knock|ping|hello\?+|anyone there|is (anyone|somebody|someone) there|testing|test|hello hello)[!?.\s]*$/i,
+    q: ['knock knock','ping','hello?','anyone there','is anyone there','testing testing','hello hello','is somebody there'],
+    a: () => `I'm here! 🙂\n\nI'm Prashobh's AI assistant — ask me anything about his work, services, or how to connect with him.`
+  },
+  {
+    p: /^(good (day|morrow|sir|madam|evening sir|morning sir)|dear (assistant|bot|ai)|greetings (from|dear))[!?.\s,]*/i,
+    q: ['good day','good morrow','dear assistant','dear bot','greetings dear','good sir','good madam'],
+    a: () => `Hello! Lovely to hear from you. 🙂\n\nI'm Prashobh's AI assistant — here to help you learn about his work or find the right way to connect.\n\nHow can I assist you today?`
+  },
+  {
+    p: /(what'?s up|how are you|how'?s it going|how are things|how do you do|you good|you okay|all good\?)[!?.\s]*$/i,
+    q: ["what's up","how are you","how's it going","how are things","how do you do","you good","are you okay","all good"],
+    a: () => `Doing great, thanks for asking! 😊\n\nI'm Prashobh's AI assistant — always ready to help.\n\nWhat would you like to know about his work or services?`
+  },
+  {
+    p: /^(hi there|hello there|hey there|greetings|hi bot|hello bot|hey bot|hello assistant|hi assistant)[!?.\s]*$/i,
+    q: ['hi there','hello there','hey there','greetings','hi bot','hello bot','hey bot','hello assistant','hi assistant'],
+    a: () => `Hi there! 👋\n\nI'm Prashobh's AI assistant — here to help you explore his work, services, or find the right way to connect.\n\nWhat brings you here today?`
+  },
+
+
+  /* ════════════════════════════════
+     ACKNOWLEDGEMENTS — okay / ok / sure / got it
+     (short neutral acks — no info needed, just stay warm)
+  ════════════════════════════════ */
+  {
+    p: /^(okay\.?|ok[!.]?|ok+[!.]?|okie|sure\.?|sure!|got it\.?|got it!|alright\.?|alright!|noted\.?|noted!|cool\.?|cool!|sounds good\.?|makes sense\.?|i see\.?|i see!|understood\.?|fair enough\.?|right\.?|yep\.?|yep!|yup\.?|nope\.?|great\.?|nice\.?|hmm\.?|hm\.?|interesting\.?)[\s!.]*$/i,
+    q: ['okay','ok','okie','sure','got it','alright','noted','cool','sounds good','makes sense','i see','understood','fair enough','yep','yup','great','nice','hmm','interesting'],
+    a: () => `Got it 🙂\n\nFeel free to ask anything about Prashobh's work or services whenever you're ready.`
+  },
+
+  /* ════════════════════════════════
+     THANK YOU — graceful acknowledgement
+  ════════════════════════════════ */
+  {
+    p: /^(thank(s| you)?( so much| a lot| very much| a ton)?[!.]?|thanks!|ty!?|thx!?|tysm!?|much appreciated\.?|appreciate (it|that|your help)\.?)[!\s.]*$/i,
+    q: ['thank you','thanks','thanks so much','thank you so much','ty','thx','tysm','much appreciated','appreciate it','appreciate your help'],
+    a: () => `You're welcome! 😊\n\nHappy to help anytime. If there's anything else you'd like to know about Prashobh's work or services, just ask.`
+  },
+
+  /* ════════════════════════════════
+     SORRY / NOT WHAT I WAS LOOKING FOR
+  ════════════════════════════════ */
+  {
+    p: /^(sorry\.?|sorry!|my bad\.?|apologies\.?|i('?m| am) sorry\.?)[!\s.]*$|(this is )?(not what (i (was|am) looking for|i wanted|i needed|i expected|i meant)|not (helpful|relevant|what i asked|the right answer|quite right))/i,
+    q: ['sorry','my bad','apologies','not what i was looking for','not helpful','not relevant','not what i asked','not quite right','this is not what i expected','not what i wanted'],
+    a: () => `No worries at all! 🙂\n\nCould you rephrase or tell me a bit more about what you're looking for? I'll do my best to get it right this time.`
+  },
+
+  /* ════════════════════════════════
+     FAREWELL — bye / tc / cya / see you
+  ════════════════════════════════ */
+  {
+    p: /^(bye[!.]?|bye bye[!.]?|goodbye[!.]?|good bye[!.]?|see you[!.]?|see ya[!.]?|cya[!.]?|c u[!.]?|cu[!.]?|tc[!.]?|take care[!.]?|ttyl[!.]?|talk (to you |ya )?(later|soon)[!.]?|catch you (later|soon)[!.]?|signing off[!.]?|have a (good|great|nice) (day|evening|night|one)[!.]?|good night[!.]?|good evening[!.]?|gn[!.]?|gtg[!.]?|got to go[!.]?)[!\s.]*$/i,
+    q: ['bye','bye bye','goodbye','see you','see ya','cya','c u','tc','take care','ttyl','talk later','catch you later','signing off','have a good day','good night','gn','gtg'],
+    a: () => `Take care! 👋\n\nIt was great having you here. Feel free to come back anytime — Prashobh's assistant is always around.\n\n📧 prashobhpaulnambadan@gmail.com`
+  },
+
+  /* ════════════════════════════════
+     TIME AWARENESS
+  ════════════════════════════════ */
+  {
+    p: /what (time|day|date) is it( now)?|what('?s| is) (the time|today'?s date|the date today|the day today)|current (time|date|day)|tell me the (time|date|day)/i,
+    q: ['what time is it','what day is it','what is the date','what is today','current time','current date','tell me the time','tell me the date'],
+    a: () => {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' });
+      const date = now.toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Kolkata' });
+      return `Right now it's ${time}, ${date} (IST — Hyderabad).\n\nPrashobh is based in Hyderabad, so that's the timezone we go by. 🙂`;
+    }
+  },
+
+  /* ════════════════════════════════
+     WEATHER AWARENESS
+  ════════════════════════════════ */
+  {
+    p: /what('?s| is) (the )?weather( like)?( (in|at|for) (hyderabad|there|here|today))?|how('?s| is) (the )?weather|weather (in hyderabad|today|forecast|update|report)|is it (raining|hot|cold|sunny|cloudy) (in hyderabad|today|there)/i,
+    q: ['what is the weather','whats the weather','weather in hyderabad','how is the weather','weather today','is it raining in hyderabad','weather forecast','weather update'],
+    a: () => {
+      const hour = new Date().toLocaleString('en-IN', { hour: 'numeric', hour12: false, timeZone: 'Asia/Kolkata' });
+      const h = parseInt(hour);
+      const season = (() => {
+        const m = new Date().getMonth() + 1;
+        if (m >= 6 && m <= 9)  return 'monsoon season — expect rain and humid conditions';
+        if (m >= 10 && m <= 11) return 'post-monsoon — pleasant with mild temperatures';
+        if (m >= 12 || m <= 2) return 'winter — cool and comfortable';
+        return 'summer — warm to hot, typically 30–40°C';
+      })();
+      return `I don't have live weather data, but Hyderabad is currently in ${season}.\n\nFor accurate real-time weather, I'd recommend checking:\n🌤️ weather.com or Google Weather — search "Hyderabad weather"\n\nPrashobh is based here, so that's the city we go by. 🙂`;
+    }
   },
 
 ];
