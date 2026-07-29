@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Works &amp; Projects – Prashobh Paul</title>
-<meta name="description" content="Apps and projects built by Prashobh Paul — download and try them yourself.">
+<meta name="description" content="Projects built by Prashobh Paul — apps and tools you can open and try yourself.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -41,7 +41,7 @@
   .section-label { font-size:0.68rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:0.7rem; margin-bottom:0.8rem; }
   .section-label::before { content:''; display:block; width:22px; height:1px; background:var(--gold); flex-shrink:0; }
   .section-title { font-family:'DM Serif Display',serif; font-size:clamp(1.9rem,3.4vw,2.9rem); color:var(--navy); line-height:1.12; margin-bottom:0.8rem; }
-  .section-sub { font-size:0.97rem; color:var(--text-mid); line-height:1.75; max-width:600px; }
+  .section-sub { font-size:0.97rem; color:var(--text-mid); line-height:1.75; max-width:620px; }
 
   /* WORKS GRID */
   .works { padding:3.5rem 0 5rem; }
@@ -59,6 +59,7 @@
   .work-banner::after { content:''; position:absolute; inset:0; background:radial-gradient(120% 130% at 85% -20%,rgba(201,168,76,0.28),transparent 55%); pointer-events:none; }
   .work-icon { flex:none; width:64px; height:64px; border-radius:14px; overflow:hidden; background:#fff; box-shadow:inset 0 0 0 1px rgba(201,168,76,0.4); position:relative; z-index:1; }
   .work-icon img { width:100%; height:100%; object-fit:contain; padding:6px; }
+  .work-icon svg { width:100%; height:100%; padding:11px; display:block; }
   .work-headline { position:relative; z-index:1; }
   .work-headline h2 { font-family:'DM Serif Display',serif; font-size:1.45rem; color:var(--white); line-height:1.1; }
   .work-headline span { display:block; font-size:0.84rem; color:var(--gold-light); margin-top:0.25rem; letter-spacing:0.01em; }
@@ -103,7 +104,7 @@
   }
   @media (prefers-reduced-motion:reduce) {
     .work-card { transition:none; opacity:1; transform:none; }
-    .work-btn--android:hover { transform:none; }
+    .work-btn--android:hover, .work-btn--ghost:hover { transform:none; }
     html { scroll-behavior:auto; }
   }
 </style>
@@ -129,7 +130,7 @@
   <div class="container">
     <div class="section-label">Portfolio</div>
     <h1 class="section-title">Works &amp; Projects</h1>
-    <p class="section-sub">A selection of apps and tools I&rsquo;ve designed and built. Grab a build and try them for yourself.</p>
+    <p class="section-sub">A few things I&rsquo;ve built &mdash; some to solve real problems around me, some simply for the love of building. Open any of them and try it for yourself.</p>
   </div>
 </header>
 
@@ -151,10 +152,12 @@
 
         <div class="work-body">
           <p>
-            A non-profit carpooling app built for the RVE, Nacharam society to make the daily
-            office commute easier and greener. Residents offer or book rides, chat with co-riders,
-            and receive realtime notifications for seat requests, approvals, cancellations, and
-            reminders. Built as a cross-platform app with a React front end and a Supabase backend.
+            The very first thing I built for people other than myself. I live in
+            <strong>Raheja Vistas Elite, Nacharam</strong>, where the daily office commute
+            was a shared headache &mdash; one that affected me too. So I built RVonWheelz to
+            fix it: neighbours offer or book car and bike rides, chat with co-riders, and
+            get realtime alerts for seat requests, approvals, and reminders. A small,
+            non-profit solution to a very real, very local problem.
           </p>
 
           <ul class="work-tags">
@@ -190,10 +193,11 @@
 
         <div class="work-body">
           <p>
-            An AI-powered FIFA World Cup 2026 companion app &mdash; AI-generated stories,
-            match intelligence, tournament simulations, and visual analytics. Built
-            offline-first as a progressive web app, so it&rsquo;s fast, works without a
-            connection, and installs straight to your Android home screen.
+            My most recent build &mdash; and the one I&rsquo;m still actively tinkering with.
+            It&rsquo;s an AI companion for the 2026 World Cup: AI-written match stories,
+            tournament simulations, and visual analytics, with a <strong>live Ballon d&rsquo;Or
+            prediction</strong> running right now. Built offline-first as a progressive web
+            app, so it installs straight onto your phone like a native app.
           </p>
 
           <ul class="work-tags">
@@ -236,19 +240,20 @@
 
         <div class="work-body">
           <p>
-            A research companion for Indian equity investors focused on the NIFTY 250
-            universe. ProfitPilot blends technical patterns, fundamental quality scores,
-            news influence, and historical backtests into a single, opinionated
-            shortlist &mdash; a backtest-first, AI-assisted screen that helps you spot
-            high-conviction trends early without spending hours in front of charts.
+            This is where I pushed the AI the furthest. ProfitPilot leans on heavy
+            analytics and <strong>live LLM calls with Google&rsquo;s Gemini</strong> to turn
+            the NIFTY 250 into a single, opinionated, backtest-first shortlist. Quality
+            scores, technicals, and news influence are all weighed &mdash; and explained
+            &mdash; so you can see exactly why each pick ranks where it does. My playground
+            for real-world applied AI.
           </p>
 
           <ul class="work-tags">
             <li>React</li>
             <li>TypeScript</li>
+            <li>Gemini LLM</li>
             <li>AI</li>
             <li>Analytics</li>
-            <li>Fintech</li>
           </ul>
 
           <div class="work-actions">
@@ -270,6 +275,65 @@
         </div>
       </article>
 
+      <!-- ── Knowledge Fabric ── -->
+      <article class="work-card">
+        <div class="work-banner">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <g stroke="#c9a84c" stroke-width="1.3">
+                <line x1="12" y1="12" x2="5" y2="5" />
+                <line x1="12" y1="12" x2="19" y2="6" />
+                <line x1="12" y1="12" x2="4.5" y2="17" />
+                <line x1="12" y1="12" x2="18" y2="18" />
+              </g>
+              <circle cx="12" cy="12" r="3.2" fill="#0b1628" />
+              <circle cx="5" cy="5" r="2" fill="#c9a84c" />
+              <circle cx="19" cy="6" r="2" fill="#1e3a6e" />
+              <circle cx="4.5" cy="17" r="2" fill="#1e3a6e" />
+              <circle cx="18" cy="18" r="2" fill="#c9a84c" />
+            </svg>
+          </div>
+          <div class="work-headline">
+            <h2>Knowledge Fabric</h2>
+            <span>Explainable, citation-grounded AI</span>
+          </div>
+        </div>
+
+        <div class="work-body">
+          <p>
+            A demo I built to show what a real &ldquo;knowledge fabric&rdquo; looks like &mdash;
+            the kind of explainable, citation-grounded AI a lot of teams are chasing right
+            now. Every answer is traced back through document &rarr; page &rarr; section
+            &rarr; paragraph, and a live knowledge graph shows exactly how it was derived.
+            Fully static: no backend, no vector database, no API keys &mdash; just open it
+            and watch the reasoning unfold.
+          </p>
+
+          <ul class="work-tags">
+            <li>Python</li>
+            <li>RAG</li>
+            <li>Knowledge Graph</li>
+            <li>Explainable AI</li>
+          </ul>
+
+          <div class="work-actions">
+            <a class="work-btn work-btn--android" href="https://prashobhpaul.github.io/Knowledge-Fabric/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+              </svg>
+              <span class="work-btn__t">Open Live Demo<small>prashobhpaul.github.io</small></span>
+            </a>
+
+            <a class="work-btn work-btn--ghost" href="https://github.com/PrashobhPaul/Knowledge-Fabric" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.28 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/>
+              </svg>
+              <span class="work-btn__t">View on GitHub<small>source code</small></span>
+            </a>
+          </div>
+        </div>
+      </article>
+
       <!-- ── Pachaka Lokam ── -->
       <article class="work-card">
         <div class="work-banner">
@@ -284,11 +348,11 @@
 
         <div class="work-body">
           <p>
-            A 100% offline kitchen and meal-planning companion for South Indian
-            households across Kerala, Tamil Nadu, Andhra Pradesh, Telangana, and
-            Karnataka. It suggests today&rsquo;s meals from what&rsquo;s actually in your
-            kitchen, knows your festival menus, and tracks grocery and household
-            reminders &mdash; with no accounts, no cloud, and no tracking.
+            My most personal project &mdash; a hobby I started simply to make life easier for
+            my <strong>mom and my wife</strong> in the kitchen. It looks simple, but it&rsquo;s
+            quietly clever: a 100% offline South-Indian meal planner that suggests today&rsquo;s
+            meals from what&rsquo;s actually in your kitchen, remembers festival menus, and
+            tracks grocery and household reminders. No accounts, no cloud, no tracking.
           </p>
 
           <ul class="work-tags">
@@ -311,6 +375,53 @@
                 <path d="M17.6 9.48l1.84-3.18a.4.4 0 0 0-.69-.4l-1.86 3.22a11.3 11.3 0 0 0-9.78 0L5.25 5.9a.4.4 0 1 0-.69.4L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/>
               </svg>
               <span class="work-btn__t">Install on Android<small>Add to Home screen</small></span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── IPLBuzz ── -->
+      <article class="work-card">
+        <div class="work-banner">
+          <div class="work-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" fill="#0b1628" />
+              <path d="M7 4.2 A 11 11 0 0 1 7 19.8" fill="none" stroke="#c9a84c" stroke-width="1.4" />
+              <g stroke="#c9a84c" stroke-width="1.2" stroke-linecap="round">
+                <line x1="6.4" y1="7.2" x2="8.2" y2="7.8" />
+                <line x1="5.8" y1="10" x2="7.7" y2="10.3" />
+                <line x1="5.7" y1="13.2" x2="7.6" y2="13.2" />
+                <line x1="6.2" y1="16.2" x2="8" y2="15.7" />
+              </g>
+            </svg>
+          </div>
+          <div class="work-headline">
+            <h2>IPLBuzz</h2>
+            <span>IPL 2026 analytics dashboard</span>
+          </div>
+        </div>
+
+        <div class="work-body">
+          <p>
+            A cricket-season side project &mdash; an IPL 2026 analytics dashboard that pulls
+            points tables, squads, and batting and bowling stats into one place. I&rsquo;ll be
+            honest: it&rsquo;s still rough and very much a <strong>work in progress</strong>,
+            but I&rsquo;m putting it out as it is and shaping it as the season unfolds.
+          </p>
+
+          <ul class="work-tags">
+            <li>JavaScript</li>
+            <li>Analytics</li>
+            <li>Cricket</li>
+            <li>Web App</li>
+          </ul>
+
+          <div class="work-actions">
+            <a class="work-btn work-btn--android" href="https://prashobhpaul.github.io/IPLBuzz/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+              </svg>
+              <span class="work-btn__t">Open Web App<small>prashobhpaul.github.io/IPLBuzz</small></span>
             </a>
           </div>
         </div>
