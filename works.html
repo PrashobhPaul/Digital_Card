@@ -80,6 +80,9 @@
   .work-btn--android:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
   .work-btn--ios { background:transparent; color:var(--text-muted); border-color:var(--border); cursor:not-allowed; }
   .work-btn--ios .soon { font-size:0.58rem; font-weight:700; letter-spacing:0.06em; background:var(--cream); border:1px solid var(--border); border-radius:999px; padding:0.12rem 0.45rem; margin-left:0.1rem; }
+  .work-btn--ghost { background:transparent; color:var(--navy-light); border-color:var(--gold); }
+  .work-btn--ghost:hover { background:var(--gold-pale); transform:translateY(-2px); }
+  .work-btn--ghost:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
 
   footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.1); text-align:center; padding:1.6rem; font-size:0.75rem; color:var(--text-muted); letter-spacing:0.05em; }
 
@@ -183,6 +186,56 @@
               <span class="work-btn__t">iOS<small>App</small></span>
               <span class="soon">Soon</span>
             </span>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Soccer.AI (World Cup 2026) ── -->
+      <article class="work-card">
+        <div class="work-banner">
+          <div class="work-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8c97a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" />
+              <polygon points="12,8.2 15,10.4 13.85,14 10.15,14 9,10.4" fill="rgba(232,201,122,0.18)" />
+              <path d="M12 3.2v2.4M4.9 8.6l2.2 1.5M19.1 8.6l-2.2 1.5M7.4 20l1.2-2.9M16.6 20l-1.2-2.9" />
+            </svg>
+          </div>
+          <div class="work-headline">
+            <h2>Soccer.AI</h2>
+            <span>AI World Cup 2026 companion</span>
+          </div>
+        </div>
+
+        <div class="work-body">
+          <p>
+            An AI-powered FIFA World Cup 2026 companion app &mdash; AI-generated stories,
+            match intelligence, tournament simulations, and visual analytics. Built
+            offline-first as a progressive web app, so it&rsquo;s fast, works without a
+            connection, and installs straight to your Android home screen.
+          </p>
+
+          <ul class="work-tags">
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>PWA</li>
+            <li>Supabase</li>
+            <li>AI</li>
+          </ul>
+
+          <div class="work-actions">
+            <a class="work-btn work-btn--android" href="https://fifa2026.prashobhpaul.com" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+              </svg>
+              <span class="work-btn__t">Open Web App<small>fifa2026.prashobhpaul.com</small></span>
+            </a>
+
+            <a class="work-btn work-btn--ghost" href="https://fifa2026.prashobhpaul.com" target="_blank" rel="noopener" title="Open in Chrome on Android, then tap Add to Home screen">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.6 9.48l1.84-3.18a.4.4 0 0 0-.69-.4l-1.86 3.22a11.3 11.3 0 0 0-9.78 0L5.25 5.9a.4.4 0 1 0-.69.4L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/>
+              </svg>
+              <span class="work-btn__t">Install on Android<small>Add to Home screen</small></span>
+            </a>
           </div>
         </div>
       </article>
