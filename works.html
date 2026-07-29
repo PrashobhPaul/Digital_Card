@@ -78,6 +78,8 @@
   .work-btn--android { background:var(--gold); color:var(--navy); }
   .work-btn--android:hover { background:var(--gold-light); transform:translateY(-2px); }
   .work-btn--android:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+  .work-btn--soon { background:transparent; color:var(--text-muted); border-color:var(--border); cursor:not-allowed; }
+  .work-btn--soon .soon { font-size:0.58rem; font-weight:700; letter-spacing:0.06em; background:var(--cream); border:1px solid var(--border); border-radius:999px; padding:0.12rem 0.45rem; margin-left:0.1rem; }
   .work-btn--ghost { background:transparent; color:var(--navy-light); border-color:var(--gold); }
   .work-btn--ghost:hover { background:var(--gold-pale); transform:translateY(-2px); }
   .work-btn--ghost:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
@@ -220,31 +222,33 @@
         </div>
       </article>
 
-      <!-- ── InvestIQ ── -->
+      <!-- ── ProfitPilot ── -->
       <article class="work-card">
         <div class="work-banner">
           <div class="work-icon">
-            <img src="assets/works/investiq.png" alt="InvestIQ app icon" width="64" height="64" loading="lazy" />
+            <img src="assets/works/profitpilot.png" alt="ProfitPilot app icon" width="64" height="64" loading="lazy" />
           </div>
           <div class="work-headline">
-            <h2>InvestIQ</h2>
-            <span>Smart investment analytics</span>
+            <h2>ProfitPilot</h2>
+            <span>AI stock research for Indian equities</span>
           </div>
         </div>
 
         <div class="work-body">
           <p>
-            A web app for smarter investing &mdash; track your portfolio and turn raw
-            numbers into clear, data-driven insights with interactive charts and
-            growth analytics. Built to make investment decisions easier to understand
-            at a glance.
+            A research companion for Indian equity investors focused on the NIFTY 250
+            universe. ProfitPilot blends technical patterns, fundamental quality scores,
+            news influence, and historical backtests into a single, opinionated
+            shortlist &mdash; a backtest-first, AI-assisted screen that helps you spot
+            high-conviction trends early without spending hours in front of charts.
           </p>
 
           <ul class="work-tags">
             <li>React</li>
             <li>TypeScript</li>
-            <li>Web App</li>
+            <li>AI</li>
             <li>Analytics</li>
+            <li>Fintech</li>
           </ul>
 
           <div class="work-actions">
@@ -254,6 +258,14 @@
               </svg>
               <span class="work-btn__t">Open Web App<small>investiq.prashobhpaul.com</small></span>
             </a>
+
+            <span class="work-btn work-btn--soon" role="link" aria-disabled="true" title="Android app coming soon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.6 9.48l1.84-3.18a.4.4 0 0 0-.69-.4l-1.86 3.22a11.3 11.3 0 0 0-9.78 0L5.25 5.9a.4.4 0 1 0-.69.4L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/>
+              </svg>
+              <span class="work-btn__t">Android App<small>APK</small></span>
+              <span class="soon">Soon</span>
+            </span>
           </div>
         </div>
       </article>
